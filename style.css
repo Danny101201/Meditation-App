@@ -52,12 +52,17 @@
     color: #fff;
     font-size: 50px;
 }
-video{
+.vid-container{
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: -10;
+    height: 100%;
+    z-index: -20;
+}
+video{
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 .time-select button,
@@ -94,4 +99,31 @@ video{
 }
 .play{
     cursor: pointer;
+}
+
+@media(max-width:600px){
+    .app{
+        flex-direction: column;
+    }
+    .time-select, .sound-picker, .player-container{
+        width: 60%;
+    }
+    .time-select, .sound-picker{
+        flex-direction: row;
+        gap: 10px;
+    }
+    .sound-picker{
+        margin-top: 40px;
+    }
+    .sound-picker button{
+        height: 90px;
+        width: 90px;
+        padding: 20px;
+    }
+    .player-container svg{
+        height: 90%;
+    }
+    .time-display{
+        bottom: -30%;
+    }
 }
